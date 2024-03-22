@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CH5作業_球</title>
+</head>
+
+<body>
+    <script>
+        /*一球從 100 公尺高度自由落下，每次落地後反跳回原高度的一半再落下，
+                請問第 10 次落地時，共經過多少公尺？*/
+        let sum = 100 //第一次不會來回
+        let j = 100
+        for (let i = 2; i <= 10; i++) {
+            j = j / 2
+            sum = sum + 2 * j
+        }
+        document.write(`共經過${sum}公尺`)
+
+        document.write(`<br>`)
+        //第 10 次反彈多高？
+        j = 100
+        for (let i = 1; i <= 10; i++) {
+            j = j / 2
+            console.log(`第${i}次反彈${j}公尺<br>`)
+        }
+        document.write(`第十次反彈${j}公尺`)
+
+    </script>
+</body>
+
+</html>

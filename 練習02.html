@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>費式數列</title>
+</head>
+
+<body>
+    <script>
+        /*
+        使用者能用 prompt() 輸入一個數字
+        印出到該數字的費氏數列（前兩項相加等於第三個數）
+        如果輸入 22
+        0 1 1 2 3 5 8 13 21
+        */
+        let user = prompt('請輸入數字')
+        let a = 1
+        for (let i = 0; i <= user; i = i + a) {
+            document.write(i)
+            document.write(`<br>`)
+            a = a + i
+            if (a <= user) {
+                document.write(a)
+                document.write(`<br>`)
+            }
+        }
+
+    </script>
+</body>
+
+</html>

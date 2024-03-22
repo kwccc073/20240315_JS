@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習3</title>
+</head>
+
+<body>
+    <script>
+        /*使用者能用 prompt() 輸入層數
+    印出下面格式的數字圖案
+    1
+    2 4
+    3 6 9
+    4 8 12 16
+    5 10 15 20 25
+    6 12 18 24 30 36*/
+
+        let user = prompt('請輸入數字')
+        let a = 0
+        for (let i = 1; i <= user; i++) {
+            a = i
+            for (let j = 1; j <= i; j++) {
+                document.write(`${a * j} `)
+            }
+            document.write("<br>")
+
+
+        }
+    </script>
+</body>
+
+</html>

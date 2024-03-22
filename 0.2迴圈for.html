@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CH5迴圈(for)</title>
+</head>
+
+<body>
+    <!-- <span>是用來當作容器 (container)，用來包裹文字 (text) 或其他行內 (inline) 的 HTML，
+        用途是方便給 CSS 做樣式排版或方便給 JavaScript 做互動操作，
+        至於 <span> 本身沒任何特殊意義也不帶任何標籤語意。 -->
+    <span style="color: rgb(0,0,255)">★</span>
+    <br>
+
+    <script>
+        /*先判斷是否 i<=9，若符合則進行{}內動作，執行完畢才 i++
+        接著繼續重複直到不符合 i<=9 */
+        for (let i = 1; i <= 9; i++) {
+            console.log(i)
+        }
+
+        //練習題：試試看自己寫一個迴圈，輸出這四個數字: 1, 4, 7, 10
+        /*離開動作要寫i+=3 (->i=i+3)這樣才會改變 i的值
+        若只寫i+3的話i的值沒有被改到（一直都是1），迴圈停不下來*/
+        for (let i = 1; i <= 10; i += 3) {
+            console.log(i)
+        }
+
+        //document.write('<span style="color: rgb(0,0,255)">★</span>')
+
+        //document.write('')裡面可以直接填html的標籤
+        /*練習：想一想，怎麼用兩個 for 迴圈製作一個九九乘法表。
+        以下兩種練習，請同學依照順序挑戰*/
+        //一行一行的算式：
+        for (let a = 1; a <= 9; a++) {
+            for (let b = 1; b <= 9; b++) {
+                let c = a * b
+                let formula = `${a} x ${b} = ${c}`
+                document.write(formula)
+                document.write('<br>')
+                /*上述內容可以改成這樣：
+                document.write(`${a}x${b}=${a*b}`)
+                */
+            }
+        }
+
+        //九九乘法表的表格練習：
+        //控制整個表格
+        document.write(`<table border="1">`)
+        for (let a = 1; a <= 9; a++) {
+            //控制每一列
+            document.write(`<tr>`)
+            for (let b = 1; b <= 9; b++) {
+                //控制每一格
+                document.write('<td>')
+                let c = a * b
+                let formula = `${a} x ${b} = ${c}`
+                document.write(formula)
+                document.write(`</td>`)
+            }
+            document.write(`<tr>`)
+        }
+        document.write(`</table>`)
+
+        /*挑戰
+        在網頁上產生一排 52 個顏色漸變的 ★，第一個星的顏色為 rgb(0,0,255)，
+        最後一個 ★ 色碼為 rgb(255,0,0)，綠色值都是0*/
+        for (let i = 0; i <= 255; i += 5) {
+            let ii = 255 - i
+            document.write(`<span style="color: rgb(${i},0,${ii})">★</span>`)
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const Y = parseInt(prompt(`年`))
+        const M = parseInt(prompt(`月`))
+        const D = parseInt(prompt(`天`))
+        let days = 0
+        // 全部的月份跑過
+        for (let i = 1; i <= M - 1; i++) {
+            // 二月
+            if (i === 2) {
+                // 400的倍數是閏年 or 4的倍數但不是100的倍數是閏年
+                if (Y % 400 === 0 || (Y % 4 === 0 & Y % 100 !== 0)) {
+                    days += 29
+                } else {
+                    days += 28
+                }
+            }
+            // 七月以前的奇數月和八月以後的偶數月為31天
+            else if ((i <= 7 && i % 2 === 1) || (i >= 8 && i % 2 === 0)) {
+                days += 31
+            } else { days += 30 }
+        }
+        days += D
+        document.write(days)
+    </script>
+</body>
+
+</html>

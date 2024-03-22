@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CH5星星第二題</title>
+</head>
+
+<body>
+    <script>
+        let user2 = prompt('輸入第二題的星星塔層數')
+        document.write('只有實心星<br>')
+        for (let a = 1; a <= user2; a++) {
+            document.write('★')
+            for (let b = 1; b < (a * 2 - 1); b++) {
+                document.write('★')
+            }
+            document.write('<br>')
+        }
+
+        document.write('<hr>')
+
+        document.write('只有空心星<br>')
+        for (let c = (user2 - 1); c > 0; c--) {
+            for (let d = c; d > 0; d--) {
+                document.write('☆')
+            }
+            document.write('<br>')
+        }
+        document.write('<hr>')
+
+        document.write('合併空心和實心星<br>')
+        let c = user2
+        for (let a = 1; a <= user2; a++) { //控制現在第幾層
+            for (let d = c - 1; d > 0; d--) {
+                document.write('☆')
+            }
+            document.write('★')
+            for (let b = 1; b < (a * 2 - 1); b++) {
+                document.write('★')
+            }
+            for (let d = c - 1; d > 0; d--) {
+                document.write('☆')
+            }
+            document.write('<br>')
+            c--
+        }
+
+        document.write('<hr>')
+
+
+        document.write('老師教學（五層版本）<br>')
+        const input = 5
+        //控制現在第幾層
+        for (let i = 1; i <= input; i++) {
+            //第 i 層的空心星星有 input - i 顆
+            for (let j = 1; j <= input - i; j++) {
+                document.write('☆')
+            }
+            //第 j 層的空心星星有 2*i - 1顆
+            for (let j = 1; j <= 2 * i - 1; j++) {
+                document.write('★')
+            }
+            //重複上面的空心星
+            for (let j = 1; j <= input - i; j++) {
+                document.write('☆')
+            }
+            document.write('<br>')
+        }
+
+
+
+    </script>
+</body>
+
+</html>

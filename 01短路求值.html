@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>短路求值</title>
+</head>
+
+<body>
+    <script>
+        /* 會被Boolean() 回傳 false 的狀況：
+         false、0、""、null、undefined、NaN */
+
+        // || 會取第一個被 boolean() 判斷為 true 的值
+        const x = null || 0 || undefined || 123 || 'abc' || 'dfgd' || false
+        console.log(x) //123
+
+        //||的使用範例：
+        const name = prompt('請輸入名字') || '路人'
+        console.log(name)
+        /*
+        若不用||則要這樣寫：
+        let name = prompt('請輸入姓名')
+        if (name === '' || name === null) {
+            name = '路人'
+        }
+        console.log(name2)
+        */
+
+        // && 會取第一個被 boolean() 判斷為 false 的值
+        const y = 'abc' && 123 && 456 && false && 'def' && undefined
+        console.log(y) //false
+        // ?? 會取第一個不是null、也不是undefined的值，若都沒有則回傳最後一個值
+        const z = undefined ?? null ?? false ?? 'abc' ?? 123 ?? 456 ?? false ?? 'def'
+        console.log(z) //false
+    </script>
+</body>
+
+</html>
