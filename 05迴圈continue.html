@@ -9,6 +9,7 @@
 
 <body>
     <script>
+        // continue是跳過一次迴圈 直接到下一次
         for (let i = 1; i <= 9; i++) {
             if (i !== 5) {
                 document.write(i + '<br>')
@@ -28,7 +29,7 @@
 
         for (let i = 1; i <= 5; i++) {
             for (let j = 1; j <= 5; j++) {
-                //多層迴圈時，continue是對寫的那層有效，無法指定哪一層
+                //多層迴圈時，continue是對寫的那層作用，如果要指定其他層則可以將迴圈設定名字（下面的範例）（break也是一樣概念）
                 //當i===2 直接跳到j++後進下一次的j迴圈
                 document.write('a')
                 if (i === 2) continue
@@ -38,13 +39,14 @@
 
         document.write('<hr>')
 
-        /*名字: 是將迴圈設定名字
+        /* 給迴圈命名----------------------
+        名字: 是將迴圈設定名字
         將外層迴圈命名為loop1
         將內層迴圈命名為loop2 */
         loop1: for (let i = 1; i <= 5; i++) {
             loop2: for (let j = 1; j <= 5; j++) {
-                //指定對loop1 迴圈進行continue
-                //直接跳到i++後進下一次i迴圈
+                /* 指定對loop1 迴圈進行continue
+                （直接跳到i++後進下一次i迴圈）*/
                 document.write('a')
                 if (i === 2) continue loop1 //當i===2時跳過（loop1迴圈）
                 document.write(`${i}x${j}=${i * j}<br>`)

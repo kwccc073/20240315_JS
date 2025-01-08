@@ -9,15 +9,17 @@
 
 <body>
     <script>
-        /* 會被Boolean() 回傳 false 的狀況：
-         false、0、""、null、undefined、NaN */
+        /* Boolean(欲判斷的變數) => 只會得到true或false
+         會被Boolean() 回傳 false 的狀況：false、0、""、null、undefined、NaN
+         其他則會回傳true
+         */
 
-        // || 會取第一個被 boolean() 判斷為 true 的值
+        // || 會使x這個變數，取第一個被 boolean() 判斷為 true 的值
         const x = null || 0 || undefined || 123 || 'abc' || 'dfgd' || false
-        console.log(x) //123
+        console.log(x) //x = 123
 
         //||的使用範例：
-        const name = prompt('請輸入名字') || '路人'
+        const name = prompt('請輸入名字') || '路人' // 如果使用者沒輸入直接關掉，那name='路人'
         console.log(name)
         /*
         若不用||則要這樣寫：
@@ -28,12 +30,13 @@
         console.log(name2)
         */
 
-        // && 會取第一個被 boolean() 判斷為 false 的值
+        // && 會使y這個變數，取第一個被 boolean() 判斷為 false 的值
         const y = 'abc' && 123 && 456 && false && 'def' && undefined
-        console.log(y) //false
-        // ?? 會取第一個不是null、也不是undefined的值，若都沒有則回傳最後一個值
+        console.log(y) // y = false
+
+        // ?? 會使z這個變數，取第一個不是null、也不是undefined的值，若都沒有則回傳最後一個值
         const z = undefined ?? null ?? false ?? 'abc' ?? 123 ?? 456 ?? false ?? 'def'
-        console.log(z) //false
+        console.log(z) // z = false
     </script>
 </body>
 
