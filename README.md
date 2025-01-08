@@ -4,4 +4,5 @@
   <li>for迴圈－99乘法表、星星等練習</li>
   <li>while迴圈 / do while迴圈</li>
   <li>continue（跳過一次迴圈）/ break（中斷迴圈）</li>
+  <li>練習：印星星、球反彈等</li>
 </ul>
