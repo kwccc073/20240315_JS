@@ -9,6 +9,8 @@
 
 <body>
     <script>
+        /*一球從 100 公尺高度自由落下，每次落地後反跳回原高度的一半再落下，
+        請問第 10 次落地時，共經過多少公尺？*/
         // 紀錄高度
         let height = 100
         // 紀錄距離
@@ -25,7 +27,7 @@
                 distance += height
             }
         }
-        document.write(`高度${height}，距離${distance}`)
+        document.write(`第 10 次落地時，共經過${distance}公尺，而第 10 次反彈的高度為${height}公尺`)
     </script>
 </body>
 
